@@ -1,0 +1,46 @@
+:root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #242640; background: #f3f2f8; line-height: 1.55; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 48px 20px; }
+.calculator { width: min(100%, 860px); margin: 0 auto; }
+header { margin: 0 4px 30px; }
+.eyebrow { font-size: .74rem; letter-spacing: 1.2px; text-transform: uppercase; color: #736792; font-weight: 750; margin: 0 0 13px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.15; letter-spacing: -.9px; margin: 0 0 14px; }
+.intro { color: #717086; margin: 0; }
+.calculation-panel { background: #fff; border: 1px solid #dedbe9; border-radius: 18px; padding: 32px; box-shadow: 0 8px 24px #39305006; }
+.equation { display: grid; grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(95px, 1fr); gap: 16px; align-items: end; }
+.operand, .result-box { min-width: 0; }
+label, .result-label { display: block; font-size: .82rem; color: #6a667d; font-weight: 650; margin-bottom: 9px; }
+input { font: inherit; font-size: 1.15rem; font-variant-numeric: tabular-nums; width: 100%; height: 58px; border: 1px solid #d0cadf; border-radius: 10px; padding: 11px 13px; color: #29263b; background: #fcfbfe; }
+input::placeholder { font-size: .82rem; color: #a19ab0; }
+input:focus { outline: 0; border-color: #7660b7; box-shadow: 0 0 0 3px #eee8fa; }
+input[aria-invalid="true"] { border-color: #bf3d4c; background: #fff8f9; }
+.operator { font-size: 1.7rem; color: #9890ac; text-align: center; padding-bottom: 9px; }
+#result { display: flex; align-items: center; min-height: 58px; border-radius: 10px; padding: 10px 14px; background: #eee9f8; color: #65439d; font-size: 1.35rem; font-weight: 750; overflow-wrap: anywhere; line-height: 1.35; }
+.hint { color: #8b829b; font-size: .78rem; margin: 16px 0 23px; }
+button { display: inline-flex; justify-content: space-between; align-items: center; gap: 30px; font: inherit; font-size: .94rem; font-weight: 650; min-height: 48px; padding: 11px 21px; border: 1px solid #644395; border-radius: 9px; background: #644395; color: #fff; cursor: pointer; }
+button:hover { background: #50347d; }
+button:focus-visible { outline: 3px solid #b4a2d5; outline-offset: 3px; }
+.error-message { font-size: .84rem; color: #b02f41; margin: 0 0 18px; }
+.history-panel { margin-top: 26px; border: 1px solid #dcd7e7; border-radius: 16px; padding: 24px 28px; background: #ffffffa6; }
+.history-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+h2 { font-size: 1.12rem; margin: 0; }
+.history-count { min-width: 28px; text-align: center; border-radius: 50px; padding: 2px 9px; background: #ede8f6; color: #7b659b; font-size: .8rem; font-weight: 650; }
+.empty-history { color: #9890a5; font-size: .9rem; margin: 20px 0 5px; }
+#history { list-style: none; padding: 0; margin: 16px 0 0; font-variant-numeric: tabular-nums; }
+#history:empty { margin-top: 0; }
+#history li { padding: 13px 0; border-bottom: 1px solid #e8e3ef; overflow-wrap: anywhere; }
+#history li:last-child { border-bottom: 0; padding-bottom: 3px; }
+footer { font-size: .76rem; color: #9990a7; text-align: center; margin-top: 24px; }
+[hidden] { display: none !important; }
+@media (max-width: 580px) {
+  body { padding: 30px 15px; }
+  .calculation-panel { padding: 23px 20px; }
+  .equation { grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr); gap: 14px 9px; }
+  .equals { grid-column: 1; justify-self: end; }
+  .result-box { grid-column: 2 / 4; }
+  .result-label { margin-bottom: 6px; }
+  input { padding: 10px; }
+  input::placeholder { font-size: .67rem; }
+  button { width: 100%; }
+  .history-panel { padding: 21px; }
+}
