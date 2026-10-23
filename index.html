@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор суми з історією — Практична №25</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator">
+    <header>
+      <p class="eyebrow">Практична робота №25 · JavaScript DOM</p>
+      <h1>Калькулятор суми</h1>
+      <p class="intro">Введіть два числа. Кожне обчислення залишиться в історії.</p>
+    </header>
+
+    <section class="calculation-panel" aria-label="Додавання двох чисел">
+      <div class="equation">
+        <div class="operand">
+          <label for="value1">Перше число</label>
+          <input id="value1" type="text" inputmode="decimal" placeholder="Наприклад, 12" autocomplete="off" aria-describedby="input-hint message">
+        </div>
+        <span class="operator" aria-hidden="true">+</span>
+        <div class="operand">
+          <label for="value2">Друге число</label>
+          <input id="value2" type="text" inputmode="decimal" placeholder="Наприклад, 8" autocomplete="off" aria-describedby="input-hint message">
+        </div>
+        <span class="operator equals" aria-hidden="true">=</span>
+        <div class="result-box">
+          <span class="result-label">Сума</span>
+          <span id="result" role="status" aria-live="polite" aria-atomic="true">—</span>
+        </div>
+      </div>
+      <p class="hint" id="input-hint">Для дробових чисел використовуйте крапку, наприклад 1.5.</p>
+      <p id="message" class="error-message" role="alert" hidden></p>
+      <button id="calculate" type="button" onclick="calculate()">Порахувати <span aria-hidden="true">→</span></button>
+    </section>
+
+    <section class="history-panel" aria-labelledby="history-heading">
+      <div class="history-heading"><h2 id="history-heading">Історія</h2><span class="history-count" id="history-count" aria-label="Кількість обчислень">0</span></div>
+      <p class="empty-history" id="empty-history">Тут з’являться ваші обчислення.</p>
+      <ul id="history" aria-live="polite" aria-relevant="additions"></ul>
+    </section>
+    <footer>Історія зберігається до перезавантаження сторінки.</footer>
+    <noscript>Увімкніть JavaScript, щоб користуватися калькулятором.</noscript>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
